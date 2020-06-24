@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-2">
+      <a class="my-3" href="/" mat-raised-button color="accent">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+    </div>
+    <div class="col-12 col-md-10">
+      <h1 class="display-3 text-capitalize">
+        {{pokemon_name}}
+        <span *ngIf="pokemon_details" class="badge badge-secondary">nº {{pokemon_details['id']}}</span>
+      </h1>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h5 *ngFor="let type of pokemon_types" class="badge badge-{{type['name']}} mr-3">{{type['name']}}</h5>
+        </div>
+        <div class="col-12 col-md-3">
+          <p *ngIf="pokemon_details"><span class="h5">Height:</span> {{pokemon_details['height'] * 0.10}} m</p>
+        </div>
+        <div class="col-12 col-md-3">
+          <p *ngIf="pokemon_details"><span class="h5">Weight:</span> {{pokemon_details['weight'] * 0.10}} kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <hr>
+    </div>
+  </div>
+</div>
+<section *ngIf="!pokemon_details" class="container d-flex justify-content-center align-items-center">
+  <mat-spinner ></mat-spinner>
+</section>
+<div *ngIf="pokemon_details" class="container">
+  <div class="row">
+      <div class="col-sm text-center" *ngFor="let sprite of pokemon_sprites.reverse()">
+        <img class="poke-sprite" [src]="sprite.url" alt="{{sprite.name}}">
+        <p class="text-capitalize">{{sprite.name.split('_').join(' ')}}</p>
+      </div>
+  </div>
+</div>

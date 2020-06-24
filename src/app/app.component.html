@@ -1,28 +1,6 @@
 <header class="navbar navbar-light bg-light justify-content-center">
-  <h1 class="navbar-brand">Poke Sprite API</h1>
+  <h1 class="navbar-brand">Pokedex API - Angular 9</h1>
 </header>
-<section *ngIf="!pokemon_data" class="d-flex justify-content-center align-items-center">
-  <mat-spinner></mat-spinner>
-</section>
-<section *ngIf="pokemon_data" class="container">
-  <div class="row">
-    <div class="col-12">
-      <mat-grid-list cols="4" rowHeight="2:1">
-        <mat-grid-tile *ngFor="let poke of pokemon_data['results']">
-          <img class="poke-sprite" *ngIf="poke.sprite_url" [src]="poke.sprite_url" alt="Pokemon {{poke.name}}">
-          <mat-spinner diameter="20" *ngIf="!poke.sprite_url" ></mat-spinner>
-          <h4>{{poke.name}}</h4>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </div>
-  </div>
-  <div class="fixed-bottom">
-    <mat-paginator  
-      [length]="pokemon_data['count']"
-      [pageSize]="pokemon_data['results'].length"
-      showFirstLastButtons="true"
-      (page)="paginatorEvent($event)">
-                
-    </mat-paginator>
-  </div>
-</section>
+<main class="py-4">
+  <router-outlet></router-outlet>
+</main>

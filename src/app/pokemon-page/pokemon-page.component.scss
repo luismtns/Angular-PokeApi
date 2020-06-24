@@ -1,0 +1,90 @@
+
+.poke-sprite{
+  max-width: 96px;
+  width: 100%;
+}
+.badge{
+  padding: 0.45em 1em;
+  font-size: 1rem;
+  font-weight: 400;
+  &-normal{
+    background-color: #98938b;
+    color: white;
+  }
+  &-fighting{
+    background-color: #78301e;
+    color: white;    
+  }
+  &-flying{
+    background-color: #6578bb;
+    color: white;
+  }
+  &-poison{
+    background-color: #924994;
+    color: white;
+  }
+  &-ground{
+    background-color: #d4b459;
+    color: white;
+  }
+  &-rock{
+    background-color: #b59f5c;
+    color: white;
+  }
+  &-bug{
+    background-color: #a8b81f;
+    color: white;
+  }
+  &-ghost{
+    background-color: #454592;
+    color: white;
+  }
+  &-steel{
+    background-color: #afafbf;
+    color: white;
+  }
+  &-fire{
+    background-color: #db3d0b;
+    color: white;
+  }
+  &-water{
+    background-color: #2f93f1;
+    color: white;
+  }
+  &-grass{
+    background-color: #75c13a;
+    color: white;
+  }
+  &-electric{
+    background-color: #f8c129;
+    color: white;
+  }
+  &-psychic{
+    background-color: #e25889;
+    color: white;
+  }
+  &-ice{
+    background-color: #a1e4fc;
+    color: white;
+  }
+  &-dragon{
+    background-color: #715bd8;
+    color: white;
+  }
+  &-dark{
+    background-color: #523e2f;
+    color: white;
+  }
+  &-fairy{
+    background-color: #f0aef2;
+    color: white;
+  }
+  &-unknown{
+    background-color: #F2F2F2;
+    color: white;
+  }
+  &-shadow{
+    background-color: #423152;
+    color: white;
+  }
+}

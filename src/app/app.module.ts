@@ -38,10 +38,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PokemonPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

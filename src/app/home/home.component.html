@@ -1,0 +1,23 @@
+
+  <section *ngIf="!pokemon_data" class="d-flex justify-content-center align-items-center container py-5">
+    <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+  </section>
+  <section *ngIf="pokemon_data" class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm text-center pointer" *ngFor="let poke of pokemon_data['results']" [routerLink]="[ '/pokemon', poke.name ]">
+        <img class="poke-sprite" *ngIf="poke['sprites']" [src]="poke['sprites']['front_default'] ? poke['sprites']['front_default'] : './assets/not-found.png'" alt="Pokemon {{poke.name}}">
+        <mat-spinner diameter="45" *ngIf="!poke['sprites']" ></mat-spinner>
+        <h5 class="text-capitalize">{{poke.name}}</h5>
+      </div>
+    </div>
+    <div class="fixed-bottom">
+      <mat-paginator  
+        [length]="pokemon_data['count']"
+        [pageSize]="page_length"
+        showFirstLastButtons="true"
+        [pageIndex]="page_index"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="paginatorEvent($event)">                
+      </mat-paginator>
+    </div>
+  </section>
